@@ -1,11 +1,14 @@
-const message = 'Обнаружены повторяющиеся символы',
+import l11n from "./l11n.mjs";
+
+const message = 'Repeating characters found',
     fieldsToValidate = ':is(input,textarea)[required]:not([type=email])',
     pattern = /(?:([A-Za-z\u0400-\u041d\u041f-\u043d\u043f-\u04FF])(?:\1\1))|(?:([^0-9A-Za-z\u0400-\u04FF])(\2))+/gi,
     form = document.getElementById('form');
 
-form.addEventListener('submit', e => e.preventDefault() || (validateForm(e) && saveForm(e)))
-form.querySelectorAll(fieldsToValidate).forEach(f => f.addEventListener('change', e => validateField(e.target)))
-document.querySelector('form button[type="submit"]').addEventListener('click', setVisibleInvalids)
+form.addEventListener('submit', e => e.preventDefault() || (validateForm(e.target) && saveForm(e.target)))
+form.querySelectorAll(fieldsToValidate).forEach(f => f.addEventListener('change', ({target: field}) => validateField(field)))
+document.querySelector('form button[type="submit"]').addEventListener('click', ({target: {form}}) => setVisibleInvalids(form) && validateForm(form))
+document.getElementById('language').addEventListener('change', async ({target: {value}}) => (await l11n).set(value));
 
 function downloadBlob(blob, name = 'form.txt') {
     const blobUrl = URL.createObjectURL(blob);
@@ -29,18 +32,19 @@ function downloadBlob(blob, name = 'form.txt') {
 
 function validateField(field) {
     field.setCustomValidity('');
-    return field.value ? !pattern.test(field.value) || field.setCustomValidity(message) : false;
+    const validityMessage = window.l11n ? window.l11n.get('repeating-characters-found') : message;
+    return field.value ? !pattern.test(field.value) || field.setCustomValidity(validityMessage) : false;
 }
 
-function validateForm(event) {
-    return ![...event.target.querySelectorAll(fieldsToValidate)].map(validateField).includes(false);
+function validateForm(form) {
+    return ![...form.querySelectorAll(fieldsToValidate)].map(validateField).includes(false);
 }
 
-function saveForm(event) {
-    const body = [...new FormData(event.target).entries()].map(field => field.join(': ')).join(`\r\n`)
+function saveForm(form) {
+    const body = [...new FormData(form).entries()].map(field => field.join(': ')).join(`\r\n`)
     return downloadBlob(new Blob([body]));
 }
 
-function setVisibleInvalids(event) {
-    return event.target.form.classList.toggle('visible-invalids', true)
+function setVisibleInvalids(form) {
+    return form.classList.toggle('visible-invalids', true)
 }

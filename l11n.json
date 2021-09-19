@@ -1,0 +1,47 @@
+{
+  "default": "en",
+  "en": {
+    "lang": "en",
+    "dir": "ltr",
+    "vezdekod-web": "Vezdekod • Web",
+    "select-language": "Select language",
+    "form-title": "Form title",
+    "first-name": "first name",
+    "last-name": "last name",
+    "email": "email",
+    "company": "company",
+    "city": "city",
+    "message": "message",
+    "send": "Send",
+    "repeating-characters-found": "Repeating characters found"
+  },
+  "ru": {
+    "lang": "ru",
+    "vezdekod-web": "Вездекод • Веб",
+    "select-language": "Выбрать язык",
+    "form-title": "Название формы",
+    "first-name": "Имя",
+    "last-name": "Фамилия",
+    "email": "Эл. почта",
+    "company": "Компания",
+    "city": "Город",
+    "message": "Сообщение",
+    "send": "Отправить",
+    "repeating-characters-found": "Обнаружены повторяющиеся символы"
+  },
+  "ar": {
+    "lang": "ar",
+    "dir": "rtl",
+    "vezdekod-web": "Vezdekod • الويب",
+    "select-language": "اختار اللغة",
+    "form-title": "عنوان النموذج",
+    "first-name": "الاسم الأول",
+    "last-name": "الاسم الاخير",
+    "email": "البريد الإلكتروني",
+    "company": "شركة",
+    "city": "مدينة",
+    "message": "رسالة",
+    "send": "أرسل",
+    "repeating-characters-found": "تم العثور على تكرار الأحرف"
+  }
+}

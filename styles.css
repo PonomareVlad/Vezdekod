@@ -55,6 +55,10 @@ label {
     align-items: center;
 }
 
+label:before {
+    content: attr(title) attr(data-after) ':';
+}
+
 label > :is(input, textarea) {
     --field-input-width: calc(100% - var(--field-label-width));
     max-width: var(--field-input-width);
