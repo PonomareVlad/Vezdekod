@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vezdekod • Web</title>
+    <meta content="dark light" name="color-scheme">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+        nav {
+            pointer-events: none;
+        }
+
+        nav:not(:hover) > a:after {
+            color: transparent;
+        }
+
+        a {
+            pointer-events: all;
+            color: inherit;
+            font-size: 20px;
+            padding: 0 .25rem;
+        }
+
+        a:not(:hover) {
+            text-decoration: unset;
+        }
+
+        a:after {
+            display: inline-block;
+            content: ' —> ';
+            margin-left: .5rem;
+        }
+
+        a:hover:after, a:hover ~ a:after {
+            color: transparent;
+        }
+
+        a:last-of-type:after {
+            content: ' 🎉 ';
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+<h1>Web</h1>
+<nav>
+    <a href="https://vezdekod-ml4nfdjlh-ponomarevlad.vercel.app">10</a>
+    <a href="https://vezdekod-70o235t7f-ponomarevlad.vercel.app">20</a>
+    <a href="https://vezdekod-1dfwdm4zi-ponomarevlad.vercel.app">30</a>
+    <a href="https://vezdekod-o1ue6zlga-ponomarevlad.vercel.app">40</a>
+    <a href="https://vezdekod-izcyk2kyp-ponomarevlad.vercel.app">50</a>
+</nav>
+</body>
+</html>
