@@ -13,7 +13,9 @@
     "city": "city",
     "message": "message",
     "send": "Send",
-    "repeating-characters-found": "Repeating characters found"
+    "repeating-characters-found": "Repeating characters found",
+    "form-data-sent-successfully": "Form data sent successfully",
+    "received-errors-while-form-processing": "Received errors while form processing"
   },
   "ru": {
     "lang": "ru",
@@ -27,7 +29,9 @@
     "city": "Город",
     "message": "Сообщение",
     "send": "Отправить",
-    "repeating-characters-found": "Обнаружены повторяющиеся символы"
+    "repeating-characters-found": "Обнаружены повторяющиеся символы",
+    "form-data-sent-successfully": "Данные формы успешно отправлены",
+    "received-errors-while-form-processing": "При обработке формы получены ошибки"
   },
   "ar": {
     "lang": "ar",
@@ -42,6 +46,8 @@
     "city": "مدينة",
     "message": "رسالة",
     "send": "أرسل",
-    "repeating-characters-found": "تم العثور على تكرار الأحرف"
+    "repeating-characters-found": "تم العثور على تكرار الأحرف",
+    "form-data-sent-successfully": "تم إرسال بيانات النموذج بنجاح",
+    "received-errors-while-form-processing": "تلقى أخطاء أثناء معالجة النموذج"
   }
 }

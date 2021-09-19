@@ -12,7 +12,7 @@
     font-size: 16px;
 }
 
-body, form {
+body, form, output {
     display: flex;
     flex-direction: column;
 }
@@ -24,9 +24,14 @@ body {
     padding-bottom: 50px;
 }
 
-form {
+form, output {
     max-width: 100%;
     width: var(--form-min-width);
+}
+
+output {
+    gap: .5rem;
+    margin: .5rem 0;
 }
 
 fieldset {
@@ -80,9 +85,22 @@ label, button {
 
 button {
     cursor: pointer;
-    background: gray;
+    background: rgba(181, 192, 221, .5);
     align-self: center;
     padding: .5em;
+}
+
+form-notification {
+    --accent-hue: 210;
+    display: block;
+    text-align: center;
+    padding: .5rem;
+    color: hsl(var(--accent-hue), 100%, 70%);
+    background-color: hsla(var(--accent-hue), 100%, 70%, 0.3);
+}
+
+form-notification.error {
+    --accent-hue: 0;
 }
 
 @media (max-width: 900px) {

@@ -11,8 +11,9 @@ class L11n {
 
     async init(localesSource, locale) {
         this.locales = await fetch(localesSource).then(r => r.json()).catch(() => ({}))
-        const targetLocale = locale || this.locales.default || Object.keys(this.locales).shift()
-        if (!this.locales.defaults) this.locales.defaults = this.locales[targetLocale] || {};
+        const defaultLocale = this.locales.default || Object.keys(this.locales).shift(),
+            targetLocale = locale || defaultLocale;
+        if (!this.locales.defaults) this.locales.defaults = this.locales[defaultLocale] || {};
         if (targetLocale) return this.set(targetLocale, true);
     }
 
