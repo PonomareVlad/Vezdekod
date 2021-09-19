@@ -6,6 +6,7 @@
     <meta content="dark light" name="color-scheme">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="/styles.css" rel="stylesheet">
+    <script defer src="/form.mjs" type="module"></script>
 </head>
 <body>
 <select id="language" name="language" title="Select language">
@@ -14,15 +15,15 @@
     <option>ar</option>
 </select>
 <h1>Form title</h1>
-<form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+<form id="form">
     <fieldset>
-        <label for="first-name">first name*:<input id="first-name" name="first-name" required></label>
-        <label for="last-name">last name*:<input id="last-name" name="last-name" required></label>
+        <label for="first-name">first name*:<input id="first-name" minlength="5" name="first-name" required></label>
+        <label for="last-name">last name*:<input id="last-name" minlength="5" name="last-name" required></label>
     </fieldset>
     <label for="email">email*:<input id="email" name="email" required type="email"></label>
     <label for="company">company:<input id="company" name="company"></label>
-    <label for="city">city*:<input id="city" name="city" required></label>
-    <label for="message">message*:<textarea id="message" name="message" required rows="3"></textarea></label>
+    <label for="city">city*:<input id="city" minlength="5" name="city" required></label>
+    <label for="message">message*:<textarea id="message" minlength="5" name="message" required></textarea></label>
     <button type="submit">Send</button>
 </form>
 </body>
