@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Вездекод • Веб</title>
+    <meta content="dark light" name="color-scheme">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+<select id="language" name="language" title="Select language">
+    <option>en</option>
+    <option>ru</option>
+    <option>ar</option>
+</select>
+<h1>Form title</h1>
+<form action="https://jkorpela.fi/cgi-bin/echo.cgi" method="post">
+    <fieldset>
+        <label for="first-name">first name*:<input id="first-name" name="first-name" required></label>
+        <label for="last-name">last name*:<input id="last-name" name="last-name" required></label>
+    </fieldset>
+    <label for="email">email*:<input id="email" name="email" required type="email"></label>
+    <label for="company">company:<input id="company" name="company"></label>
+    <label for="city">city*:<input id="city" name="city" required></label>
+    <label for="message">message*:<textarea id="message" name="message" required rows="3"></textarea></label>
+    <button type="submit">Send</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --form-min-width: 700px;
+    --field-label-width: 75px;
+}
+
+:root, input, textarea {
+    font-size: 16px;
+}
+
+body, form {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    align-items: center;
+}
+
+form {
+    max-width: 100%;
+    width: var(--form-min-width);
+}
+
+fieldset {
+    /*--field-input-width: 300px;*/
+    /*max-width: var(--form-min-width);*/
+    display: flex;
+    justify-content: space-between;
+    border: unset;
+    margin: unset;
+    padding: unset;
+    gap: 1rem;
+}
+
+input, textarea, button {
+    -webkit-appearance: unset;
+}
+
+input, textarea {
+    font-family: inherit;
+    background: unset;
+    border: 1px solid gray;
+}
+
+label {
+    word-break: break-word;
+    margin: .5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+label > :is(input, textarea) {
+    --field-input-width: calc(100% - var(--field-label-width));
+    max-width: var(--field-input-width);
+    min-width: var(--field-input-width);
+    align-self: stretch;
+}
+
+label:last-of-type {
+    align-items: flex-start;
+}
+
+button[type=submit] {
+    background: gray;
+    align-self: center;
+}
